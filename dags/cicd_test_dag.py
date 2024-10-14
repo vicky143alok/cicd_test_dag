@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.providers.snowflake.operators.snowflake import SnowflakeOperator
-from airflow.providers.amazon.aws.transfers.s3 import S3CreateObjectOperator
+from airflow.providers.amazon.aws.transfers.s3 import S3CreateObjectOperator # type: ignore
 from datetime import datetime
 
 # Default arguments for the DAG
