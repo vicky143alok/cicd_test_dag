@@ -24,7 +24,6 @@ jobs:
     - name: Test DAG syntax
       run: |
         docker-compose up -d
-        tty: false
         docker exec -it airflow_webserver_1 airflow dags list
 
   build-deploy-dag:
