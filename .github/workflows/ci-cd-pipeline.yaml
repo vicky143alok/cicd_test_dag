@@ -4,7 +4,7 @@ name: Airflow CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   test-dag:
