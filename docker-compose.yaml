@@ -1,5 +1,5 @@
+version: '3.8'  # Specify the version of the Docker Compose file
 
-version: '3'
 services:
   postgres:
     image: postgres:13
@@ -13,7 +13,6 @@ services:
           memory: 256M
         reservations:
           memory: 128M
-
 
   redis:
     image: redis:latest
@@ -43,7 +42,6 @@ services:
         reservations:
           memory: 512M
 
-
   scheduler:
     image: thelastmonk/airflow-dag-image:latest
     command: ["scheduler"]
@@ -51,13 +49,10 @@ services:
       - webserver
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow_user:airflow_password@postgres/airflow_db
-
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
     deploy:
       resources:
         limits:
           memory: 1G
         reservations:
           memory: 512M
-
-    
