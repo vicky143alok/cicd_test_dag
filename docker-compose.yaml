@@ -24,7 +24,7 @@ services:
           memory: 64M
 
   webserver:
-    image: apache/thelastmonk/airflow-dag-image:latest
+    image: apache/airflow-dag-image:latest
     command: ["webserver"]
     container_name: airflow_webserver_1
     environment:
@@ -44,7 +44,7 @@ services:
 
 
   scheduler:
-    image: apache/thelastmonk/airflow-dag-image:latest
+    image: apache/airflow-dag-image:latest
     command: ["scheduler"]
     depends_on:
       - webserver
