@@ -7,7 +7,6 @@ services:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
-      volumes: postgres_data:/var/lib/postgresql/data
     deploy:
       resources:
         limits:
