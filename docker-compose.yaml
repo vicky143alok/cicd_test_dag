@@ -60,8 +60,4 @@ services:
         reservations:
           memory: 512M
 
-
-    volumes:
-      postgres_data:
-
     
