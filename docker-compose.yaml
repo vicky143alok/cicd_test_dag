@@ -25,6 +25,7 @@ services:
 
   webserver:
     image: thelastmonk/airflow-dag-image:latest
+    command: ["webserver"]
     container_name: airflow_webserver_1
     environment:
       - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
@@ -44,6 +45,7 @@ services:
 
   scheduler:
     image: thelastmonk/airflow-dag-image:latest
+    command: ["scheduler"]
     depends_on:
       - webserver
     deploy:
