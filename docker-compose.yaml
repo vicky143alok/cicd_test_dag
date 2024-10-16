@@ -6,6 +6,13 @@ services:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
 
   redis:
     image: redis:latest
@@ -21,8 +28,22 @@ services:
     depends_on:
       - postgres
       - redis
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
 
   scheduler:
     image: thelastmonk/airflow-dag-image:latest
     depends_on:
       - webserver
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
